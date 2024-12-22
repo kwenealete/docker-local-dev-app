@@ -9,7 +9,14 @@ All components are docker-based
 
 ### With Docker
 
+
 #### To start the application
+
+
+step 0: Pull mongodb and mongo-express images from docker hub.
+
+![mongodb-and-mongo-express-docker-image-pull](app/images/mongo-and-mongo-express-docker-image.png)
+
 
 Step 1: Create docker network
 
@@ -19,6 +26,7 @@ Step 2: start mongodb
 
     docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network mongo    
 
+![mongodb-running](app/images/starting-mongodb.png)
 Step 3: start mongo-express
     
     docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password --net mongo-network --name mongo-express -e ME_CONFIG_MONGODB_SERVER=mongodb mongo-express   
@@ -29,7 +37,11 @@ Step 4: open mongo-express from browser
 
     http://localhost:8081
 
+![mongo-express-in-browser](app/images/mongo-express-dashboard.png)
+
 Step 5: create `user-account` _db_ and `users` _collection_ in mongo-express
+
+![users-collection](app/images/users-collection.png)
 
 Step 6: Start your nodejs application locally - go to `app` directory of project 
 
@@ -40,6 +52,12 @@ Step 6: Start your nodejs application locally - go to `app` directory of project
 Step 7: Access you nodejs application UI from browser
 
     http://localhost:3000
+
+![running-app](app/images/node-app.png)
+
+step 8: Edit the record and view changes in users collection from the mongo-express browser link.
+
+![details](app/images/db-data.png) ![collections](app/images/db-collection.png)
 
 ### With Docker Compose
 
