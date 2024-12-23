@@ -65,13 +65,19 @@ step 8: Edit the record and view changes in users collection from the mongo-expr
 
 Step 1: start mongodb and mongo-express
 
-    docker-compose -f docker-compose.yaml up
+    docker-compose -f mongo.yaml up
+
+![docker-compose](app/images/docker-compose-command-executed.png)
     
-_You can access the mongo-express under localhost:8080 from your browser_
+_You can access the mongo-express under localhost:8081 from your browser_
     
 Step 2: in mongo-express UI - create a new database "user-account"
 
-Step 3: in mongo-express UI - create a new collection "users" in the database "user-account"       
+![user-account](app/images/create-db.png)
+
+Step 3: in mongo-express UI - create a new collection "users" in the database "user-account"  
+
+ ![user-collection](app/images/create-collection.png)
     
 Step 4: start node server 
 
